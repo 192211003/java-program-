@@ -1,0 +1,20 @@
+class Outer {
+    private int outerVar = 10;
+    class Inner {
+        void display() {
+            System.out.println("Value of outerVar: " + outerVar);
+        }
+    }
+    void createInner() {
+        Inner innerObj = new Inner();
+        innerObj.display();
+    }
+}
+public class inner {
+    public static void main(String[] args) {
+        Outer outerObj = new Outer();
+        outerObj.createInner();
+        Outer.Inner innerObj2 = outerObj.new Inner();
+        innerObj2.display();
+    }
+}
