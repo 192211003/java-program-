@@ -1,0 +1,29 @@
+class Parent {
+    String message;
+    Parent(String message) {
+        this.message = message;
+    }
+    void display() {
+        System.out.println("Message from Parent: " + message);
+    }
+}
+class Child extends Parent {
+    Child(String message) {
+        super(message);
+    }
+
+    void displayParentMessage() {
+        super.display();
+    }
+    void displayChildMessage() {
+        System.out.println("Message from Child: " + this.message);
+    }
+}
+
+public class Keyword {
+    public static void main(String[] args) {
+        Child childObj = new Child("Hello World");
+        childObj.displayParentMessage();
+        childObj.displayChildMessage();
+    }
+}
